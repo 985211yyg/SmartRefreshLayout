@@ -1,0 +1,46 @@
+apply plugin: 'maven-publish'
+
+afterEvaluate { project ->
+    try {
+        if (publishProjectName != null
+                && !publishProjectName.isEmpty()
+                && publishProjectName != project.name) {
+            return
+        }
+        def groupId = project.ext["GROUP_ID"]
+        def artifactId = project.ext["ARTIFACT_ID"]
+
+        println "配置 ${project.name} 工程 maven 打包插件: { groupId : $groupId, artifactId : $artifactId, version : $version } "
+
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    // 可根据自己需求打 debug 包还是 release 包
+                    // from project.components.debug
+                    from project.components.release
+                    it.groupId = groupId
+                    it.artifactId = artifactId
+                    it.version = "1.0.0"
+                }
+            }
+            repositories {
+                maven {
+                    url = 'https://packages.aliyun.com/maven/repository/2176398-release-ZmX4Sd/'
+                    credentials {
+                        username = '61dbce18ae805dbacc46c2e4'
+                        password = 'AMj-MrOV_IWk'
+                    }
+                }
+                maven {
+                    url = 'https://packages.aliyun.com/maven/repository/2176398-snapshot-xzQKIZ/'
+                    credentials {
+                        username = '61dbce18ae805dbacc46c2e4'
+                        password = 'AMj-MrOV_IWk'
+                    }
+                }
+            }
+        }
+    } catch (Exception e) {
+        // 忽略未配置打包信息的 project
+    }
+}

@@ -1,5 +1,10 @@
 apply plugin: 'com.android.library'
 
+apply from: '../publishmaven.gradle'
+this.ext.GROUP_ID = 'io.github.yyg'
+this.ext.ARTIFACT_ID = 'refresh-header-classics'
+
+
 description = 'the header ClassicsHeader of SmartRefreshLayout'
 
 android {
@@ -20,6 +25,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+
     }
 
 }

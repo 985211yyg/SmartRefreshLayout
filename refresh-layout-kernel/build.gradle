@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 
+apply from: '../publishmaven.gradle'
+this.ext.GROUP_ID = 'io.github.yyg'
+this.ext.ARTIFACT_ID = 'refresh-layout-kernel'
+
 description = 'the kernel of SmartRefreshLayout'
 
 android {
@@ -21,7 +25,9 @@ android {
         }
     }
     lintOptions {
+        checkReleaseBuilds false
         abortOnError false
+
     }
 }
 

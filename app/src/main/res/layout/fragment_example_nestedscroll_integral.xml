@@ -7,12 +7,13 @@
     android:orientation="vertical"
     tools:context="com.scwang.refreshlayout.fragment.example.NestedScrollExampleFragmentIntegral">
 
-    <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        app:navigationIcon="?attr/homeAsUpIndicator"
+        style="@style/AppTheme.Toolbar"
         app:contentInsetStart="0dp"
         app:contentInsetStartWithNavigation="0dp"
-        app:title="@string/fragment_example_nested_scroll_integral"/>
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/fragment_example_nested_scroll_integral" />
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
@@ -23,27 +24,28 @@
         <com.scwang.smartrefresh.layout.header.ClassicsHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:srlAccentColor="@android:color/white"
             app:srlClassicsSpinnerStyle="Scale"
-            app:srlPrimaryColor="#444"
-            app:srlAccentColor="@android:color/white"/>
+            app:srlPrimaryColor="#444" />
+
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <!--<androidx.recyclerview.widget.RecyclerView-->
-                <!--android:id="@+id/recyclerView"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:background="@color/colorBackgroundDark"-->
-                <!--android:overScrollMode="never"-->
-                <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-                <!--tools:listitem="@android:layout/simple_list_item_2"/>-->
+            <!--android:id="@+id/recyclerView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/colorBackgroundDark"-->
+            <!--android:overScrollMode="never"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+            <!--tools:listitem="@android:layout/simple_list_item_2"/>-->
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbar"
@@ -56,131 +58,140 @@
                     android:id="@+id/toolbarLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dimenPaddingCommon"
                     android:fitsSystemWindows="true"
+                    android:paddingBottom="@dimen/dimenPaddingCommon"
                     app:layout_scrollFlags="scroll">
+
                     <com.youth.banner.Banner
                         android:id="@+id/banner"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:background="@color/colorDivision"
-                        tools:background="@mipmap/gif_header_repast"
+                        app:is_auto_play="true"
                         app:layout_collapseMode="parallax"
-                        app:is_auto_play="true"/>
+                        tools:background="@mipmap/gif_header_repast" />
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dimenPaddingCommon"
-                    android:orientation="vertical"
                     android:divider="@android:drawable/divider_horizontal_dark"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dimenPaddingCommon"
                     android:showDividers="beginning|end"
                     app:layout_scrollFlags="scroll">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/dimenPaddingCommon"
-                        android:paddingLeft="@dimen/dimenPaddingCommon"
-                        android:paddingRight="@dimen/dimenPaddingCommon"
+                        android:background="@android:color/white"
                         android:orientation="horizontal"
-                        android:background="@android:color/white">
+                        android:paddingLeft="@dimen/dimenPaddingCommon"
+                        android:paddingTop="@dimen/dimenPaddingCommon"
+                        android:paddingRight="@dimen/dimenPaddingCommon">
+
                         <View
                             android:layout_width="2dp"
                             android:layout_height="18dp"
-                            android:background="@color/colorPrimary"/>
-                        <androidx.legacy.widget.Space
-                            android:layout_width="@dimen/dimenPaddingCommon"
-                            android:layout_height="wrap_content" />
-                        <TextView style="@style/AppTheme.Label"
+                            android:background="@color/colorPrimary" />
+
+                        <TextView
+                            style="@style/AppTheme.Label"
                             android:layout_gravity="center_vertical"
-                            android:textColor="@color/colorPrimary"
-                            android:text="特色菜肴"/>
+                            android:text="特色菜肴"
+                            android:textColor="@color/colorPrimary" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="@dimen/dimenPaddingCommon"
+                        android:background="@android:color/white"
                         android:orientation="vertical"
-                        android:background="@android:color/white">
+                        android:padding="@dimen/dimenPaddingCommon">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
                             android:orientation="horizontal">
+
                             <FrameLayout
                                 android:id="@+id/cih_maintain"
-                                android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:background="@mipmap/image_practice_repast_1">
-                                <TextView style="@style/AppTheme.Label.Title"
+
+                                <TextView
+                                    style="@style/AppTheme.Label.Title"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:background="#44000000"
                                     android:gravity="center"
                                     android:text="但家香酥鸭"
-                                    android:textColor="@android:color/white"
-                                    android:background="#44000000"/>
+                                    android:textColor="@android:color/white" />
                             </FrameLayout>
-                            <androidx.legacy.widget.Space
-                                android:layout_width="@dimen/dimenPaddingDiminutive"
-                                android:layout_height="wrap_content" />
+
                             <FrameLayout
                                 android:id="@+id/cih_homemaking"
-                                android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:background="@mipmap/image_practice_repast_2">
-                                <TextView style="@style/AppTheme.Label.Title"
+
+                                <TextView
+                                    style="@style/AppTheme.Label.Title"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:background="#44000000"
                                     android:gravity="center"
                                     android:text="香菇蒸鸟蛋"
-                                    android:textColor="@android:color/white"
-                                    android:background="#44000000"/>
+                                    android:textColor="@android:color/white" />
                             </FrameLayout>
 
                         </LinearLayout>
-                        <androidx.legacy.widget.Space
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/dimenPaddingDiminutive"/>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="100dp">
+
                             <FrameLayout
                                 android:id="@+id/cih_document"
-                                android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:background="@mipmap/image_practice_repast_3">
-                                <TextView style="@style/AppTheme.Label.Title"
+
+                                <TextView
+                                    style="@style/AppTheme.Label.Title"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:background="#44000000"
                                     android:gravity="center"
                                     android:text="花溪牛肉粉"
-                                    android:textColor="@android:color/white"
-                                    android:background="#44000000"/>
+                                    android:textColor="@android:color/white" />
                             </FrameLayout>
-                            <androidx.legacy.widget.Space
-                                android:layout_width="@dimen/dimenPaddingDiminutive"
-                                android:layout_height="wrap_content" />
+
                             <FrameLayout
                                 android:id="@+id/cih_wiki"
-                                android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:background="@mipmap/image_practice_repast_4">
-                                <TextView style="@style/AppTheme.Label.Title"
+
+                                <TextView
+                                    style="@style/AppTheme.Label.Title"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:background="#44000000"
                                     android:gravity="center"
                                     android:text="破酥包"
-                                    android:textColor="@android:color/white"
-                                    android:background="#44000000"/>
+                                    android:textColor="@android:color/white" />
                             </FrameLayout>
 
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -188,27 +199,30 @@
                     android:orientation="vertical"
                     app:layout_collapseMode="pin"
                     app:layout_scrollFlags="exitUntilCollapsed|enterAlways|enterAlwaysCollapsed">
-                    <View style="@style/AppTheme.Division"/>
+
+                    <View style="@style/AppTheme.Division" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="horizontal"
                         android:padding="@dimen/dimenPaddingCommon"
-                        android:tag="fixed"
-                        android:orientation="horizontal">
+                        android:tag="fixed">
+
                         <View
                             android:layout_width="2dp"
                             android:layout_height="18dp"
-                            android:background="@color/colorPrimary"/>
-                        <androidx.legacy.widget.Space
-                            android:layout_width="@dimen/dimenPaddingCommon"
-                            android:layout_height="wrap_content" />
-                        <TextView style="@style/AppTheme.Label"
+                            android:background="@color/colorPrimary" />
+
+                        <TextView
                             android:id="@+id/target"
+                            style="@style/AppTheme.Label"
                             android:layout_gravity="center_vertical"
-                            android:textColor="@color/colorPrimary"
-                            android:text="菜单列表"/>
+                            android:text="菜单列表"
+                            android:textColor="@color/colorPrimary" />
                     </LinearLayout>
-                    <View style="@style/AppTheme.Division"/>
+
+                    <View style="@style/AppTheme.Division" />
                 </LinearLayout>
             </com.google.android.material.appbar.AppBarLayout>
 

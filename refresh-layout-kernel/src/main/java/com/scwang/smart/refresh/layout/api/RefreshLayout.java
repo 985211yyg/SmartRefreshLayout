@@ -214,7 +214,9 @@ public interface RefreshLayout {
      * @param enabled 是否启用
      * @return RefreshLayout
      */
-    RefreshLayout setEnableRefresh(boolean enabled);
+    RefreshLayout
+
+    setEnableRefresh(boolean enabled);
 
     /**
      * Set whether to enable pull-up loading more (enabled by default).
@@ -641,6 +643,11 @@ public interface RefreshLayout {
      *         是否成功（状态不符合会失败）
      */
     boolean autoLoadMore(int delayed, int duration, float dragRate, boolean animationOnly);
+
+    /**
+     * 是否支持刷新
+     */
+    boolean isEnableRefresh();
 
     /**
      * 是否正在刷新

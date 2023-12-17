@@ -3565,6 +3565,11 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
         }
     }
 
+    @Override
+    public boolean isEnableRefresh() {
+        return mEnableRefresh;
+    }
+
     /**
      * 设置默认 Header 构建器
      * @param creator Header构建器
